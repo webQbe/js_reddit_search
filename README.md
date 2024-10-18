@@ -17,7 +17,7 @@
 
 ### Getting Started with Parcel
 1. Open VSCode Integrated Terminal 
-    - Run `npm i -g parcel-bundler`
+    - Run `sudo npm i -g parcel-bundler`
 2. Create `package.json` file:
     - Run `npm init`
 3. Add `Reddit search app` to `description` field
