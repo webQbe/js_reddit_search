@@ -35,8 +35,30 @@ searchForm.addEventListener('submit', e => {
     reddit.search(searchTerm, resultLimit, sortBy)
         .then(results => {
             
-            // log results from search()
-            console.log(results);
+            // Output results to UI
+            let output = '<div class="card-columns">';
+
+            // Loop through results array
+            results.forEach(post => {
+
+                // Append Bootstrap Card template
+                output += `
+                <div class="card">
+                    <img class="card-img-top" src="..." alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>`;
+
+            });
+
+             // Append closing tag
+            output += '</div>';
+
+            // Output to results div 
+            document.getElementById('results').innerHTML = output;
 
         });
 
