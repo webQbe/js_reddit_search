@@ -51,4 +51,7 @@ function showMessage(message, className){
     // Insert created div
     searchContainer.insertBefore(div, searchDiv);
 
+    // Remove error message in 3 sec
+    setTimeout(() => document.querySelector('.alert').remove(), 3000);
+
 }
