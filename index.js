@@ -6,7 +6,9 @@ const searchInput = document.getElementById('search-input');
 // Add Event Listener to search-form
 searchForm.addEventListener('submit', e => {
 
-    console.log("test");
+    // Get search term
+    const searchTerm = searchInput.value
+    console.log(searchTerm);
 
     // prevent default submit
     e.preventDefault();
