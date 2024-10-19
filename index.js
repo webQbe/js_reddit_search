@@ -49,7 +49,7 @@ searchForm.addEventListener('submit', e => {
                     <img class="card-img-top" src="..." alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">${post.title}</h5>
-                        <p class="card-text">${post.selftext}</p>
+                        <p class="card-text">${truncateText(post.selftext, 100)}</p>
                         <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>`;
@@ -92,6 +92,27 @@ function showMessage(message, className){
 
     // Remove error message in 3 sec
     setTimeout(() => document.querySelector('.alert').remove(), 3000);
+
+
+}
+
+// Truncate Post Text
+// Truncation happens at the nearest space after the limit 
+// to avoid cutting off words in the middle.
+function truncateText(text, limit){
+
+    // Start searching for a space 
+    // from the character position limit and return the index of the first space
+    const shortened = text.indexOf(' ', limit); 
+
+    // If no space is found, it returns -1.
+    // Returns the original text without truncating.
+    if(shortened == -1) return text;  
+
+    // If a space is found 
+    // Extract the portion of the text 
+    // from the start (index 0) up to the index of the space
+    return text.substring(0, shortened);
 
 
 }
