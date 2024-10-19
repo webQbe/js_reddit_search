@@ -8,7 +8,11 @@ searchForm.addEventListener('submit', e => {
 
     // Get search term
     const searchTerm = searchInput.value
-    console.log(searchTerm);
+    
+    // Get Selected Sort Option
+    const sortBy = document.querySelector('input[name="sortby"]:checked').value;
+    console.log(sortBy);
+
 
     // prevent default submit
     e.preventDefault();
