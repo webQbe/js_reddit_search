@@ -1,3 +1,7 @@
+
+// Import module redditapi.js
+import reddit from './redditapi';
+
 // Select search-form & search-input
 
 const searchForm = document.getElementById('search-form');
@@ -53,5 +57,8 @@ function showMessage(message, className){
 
     // Remove error message in 3 sec
     setTimeout(() => document.querySelector('.alert').remove(), 3000);
+
+    // Finally Clear input
+    searchInput.value = '';
 
 }
