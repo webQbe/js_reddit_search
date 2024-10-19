@@ -16,8 +16,39 @@ searchForm.addEventListener('submit', e => {
     const resultLimit = document.querySelector('#limit').value;
     console.log(resultLimit);
 
+    // Check blank input
+    if(searchTerm === ''){
+
+        // Pass message & Bootstrap class
+        showMessage('Please add a search term!', 'alert-danger mt-2');
+
+    }
+
 
     // prevent default submit
     e.preventDefault();
 
 });
+
+// Define showMessage()
+function showMessage(message, className){
+
+    // Create Element
+    const div = document.createElement('div');
+
+    // Add Class from className parameter
+    div.className = `alert ${className}`;
+
+    // Add Text from message parameter
+    div.appendChild(document.createTextNode(message));
+
+    // Get Parent Container div 
+    const searchContainer = document.getElementById('search-container');
+
+    // Get Search div
+    const searchDiv = document.getElementById('search');
+
+    // Insert created div
+    searchContainer.insertBefore(div, searchDiv);
+
+}
