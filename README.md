@@ -23,5 +23,5 @@
 3. Add `Reddit search app` to `description` field
 4. Add your name to `Author` field
 5. `Licence` : `MIT`
-6. To Compile:
+6. To compile & run server:
     - Run `parcel index.html`
