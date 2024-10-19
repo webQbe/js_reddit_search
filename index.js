@@ -28,6 +28,11 @@ searchForm.addEventListener('submit', e => {
 
     }
 
+    // Finally Clear input
+    searchInput.value = '';
+
+    // Search Reddit 
+    reddit.search(searchTerm, resultLimit, sortBy);
 
     // prevent default submit
     e.preventDefault();
@@ -58,7 +63,5 @@ function showMessage(message, className){
     // Remove error message in 3 sec
     setTimeout(() => document.querySelector('.alert').remove(), 3000);
 
-    // Finally Clear input
-    searchInput.value = '';
 
 }
