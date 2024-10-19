@@ -40,13 +40,19 @@ searchForm.addEventListener('submit', e => {
             // Output results to UI
             let output = '<div class="card-columns">';
 
+            // Image for Text Only posts
+            const redditLogo = './logo.png';
+
             // Loop through results array
             results.forEach(post => {
+
+                // Check for Image with Ternary Operator
+                const image = post.preview ? post.preview.images[0].source.url : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSU-VQa39NPlNSuTOZ_algJANY0dfNCPSyjrA&s';
 
                 // Append Bootstrap Card template
                 output += `
                 <div class="card">
-                    <img class="card-img-top" src="..." alt="Card image cap">
+                    <img class="card-img-top" src="${image}" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">${post.title}</h5>
                         <p class="card-text">${truncateText(post.selftext, 100)}</p>
