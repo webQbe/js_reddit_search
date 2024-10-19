@@ -25,3 +25,5 @@
 5. `Licence` : `MIT`
 6. To compile & run server:
     - Run `parcel index.html`
+7. Bundle the app with Parcel
+    - Run `parcel build index.html --public-url ./`
