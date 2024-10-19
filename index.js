@@ -34,6 +34,8 @@ searchForm.addEventListener('submit', e => {
     // reditapi.search() returns a promise
     reddit.search(searchTerm, resultLimit, sortBy)
         .then(results => {
+
+            console.log(results);
             
             // Output results to UI
             let output = '<div class="card-columns">';
@@ -46,7 +48,7 @@ searchForm.addEventListener('submit', e => {
                 <div class="card">
                     <img class="card-img-top" src="..." alt="Card image cap">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title">${post.title}</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
