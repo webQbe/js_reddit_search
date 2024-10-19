@@ -11,7 +11,10 @@ searchForm.addEventListener('submit', e => {
     
     // Get Selected Sort Option
     const sortBy = document.querySelector('input[name="sortby"]:checked').value;
-    console.log(sortBy);
+
+    // Get Selected Limit
+    const resultLimit = document.querySelector('#limit').value;
+    console.log(resultLimit);
 
 
     // prevent default submit
