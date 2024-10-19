@@ -18,7 +18,6 @@ searchForm.addEventListener('submit', e => {
 
     // Get Selected Limit
     const resultLimit = document.querySelector('#limit').value;
-    console.log(resultLimit);
 
     // Check blank input
     if(searchTerm === ''){

@@ -2,9 +2,14 @@
 export default {
 
     // Make a request to Reddit API
-    search: function(){
+    search: function(searchTerm, resultLimit, sortBy){
 
-        console.log('Searching...');
+        // Use Fetch API
+        fetch(`http://www.reddit.com/search.json?q=${searchTerm}`)
+            .then(res => res.json()) // convert response to json
+            .then(data => console.log(data));
+
+            /* Posts are in the children array  */
 
     }
 
