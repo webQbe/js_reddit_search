@@ -31,7 +31,14 @@ searchForm.addEventListener('submit', e => {
     searchInput.value = '';
 
     // Search Reddit 
-    reddit.search(searchTerm, resultLimit, sortBy);
+    // reditapi.search() returns a promise
+    reddit.search(searchTerm, resultLimit, sortBy)
+        .then(results => {
+            
+            // log results from search()
+            console.log(results);
+
+        });
 
     // prevent default submit
     e.preventDefault();

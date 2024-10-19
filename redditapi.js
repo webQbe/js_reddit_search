@@ -5,9 +5,11 @@ export default {
     search: function(searchTerm, resultLimit, sortBy){
 
         // Use Fetch API
-        fetch(`http://www.reddit.com/search.json?q=${searchTerm}&sort=${sortBy}&limit=${resultLimit}`)
+        // Make search function return a promise
+        return fetch(`http://www.reddit.com/search.json?q=${searchTerm}&sort=${sortBy}&limit=${resultLimit}`)
             .then(res => res.json()) // convert response to json
-            .then(data => console.log(data.data.children));
+            .then(data => data.data.children.map(data => data.data)) // map only to data
+            .catch(err => console.log(err)); 
 
     }
 
